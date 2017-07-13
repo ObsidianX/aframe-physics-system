@@ -40,9 +40,9 @@ module.exports = {
             material: this.system.material,
             position: new CANNON.Vec3(pos.x, pos.y, pos.z),
             linearDamping: data.linearDamping,
-            angularDamping: data.angularDamping,
-            collisionResponse: data.collisionResponse
+            angularDamping: data.angularDamping
         });
+        this.body.collisionResponse = data.collisionResponse;
 
         // Matrix World must be updated at root level, if scale is to be applied – updateMatrixWorld()
         // only checks an object's parent, not the rest of the ancestors. Hence, a wrapping entity with
